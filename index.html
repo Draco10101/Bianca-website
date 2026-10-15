@@ -1,0 +1,240 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta name="viewport" content="width=device-width, initial-scale=1"><style>
+@charset "utf-8";
+
+:root { --navy: #071326; --navy2: #0c1d36; --gold: #e9bd63; --gold2: #ffdf91; --cream: #fff8e9; --muted: #c6ccda; --line: rgba(233,189,99,.28); }
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body { margin: 0px; background: var(--navy); color: rgb(255, 255, 255); font-family: Arial, Helvetica, sans-serif; line-height: 1.6; }
+
+a { color: inherit; }
+
+.wrap { width: min(1120px, 92%); margin: auto; }
+
+.topbar { background: rgb(5, 12, 24); border-bottom: 1px solid var(--line); padding: 10px 0px; font-size: 0.88rem; color: var(--muted); }
+
+.topbar .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+header { position: sticky; top: 0px; z-index: 10; background: rgba(7, 19, 38, 0.96); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+
+nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+
+.brand { font-family: Georgia, serif; font-size: 1.2rem; font-weight: bold; color: var(--gold2); text-decoration: none; line-height: 1.2; }
+
+.brand small { display: block; font-family: Arial, sans-serif; font-size: 0.65rem; letter-spacing: 0.18em; color: rgb(255, 255, 255); font-weight: normal; margin-top: 5px; }
+
+.navlinks { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+
+.navlinks a { text-decoration: none; font-size: 0.9rem; color: rgb(244, 241, 233); }
+
+.navlinks a:hover { color: var(--gold2); }
+
+.btn { display: inline-flex; justify-content: center; align-items: center; gap: 8px; padding: 12px 18px; border-radius: 999px; background: linear-gradient(135deg,var(--gold2),var(--gold)); color: rgb(16, 23, 37); text-decoration: none; font-weight: 800; border: 1px solid rgb(255, 231, 176); box-shadow: rgba(0, 0, 0, 0.267) 0px 7px 24px; transition: transform 0.2s; }
+
+.btn:hover { transform: translateY(-2px); }
+
+.btn.outline { background: transparent; color: var(--gold2); border: 1px solid var(--gold); }
+
+.hero { padding: 54px 0px 62px; background: radial-gradient(at 75% 15%, rgb(22, 52, 90) 0px, transparent 45%), linear-gradient(140deg, rgb(7, 19, 38), rgb(11, 25, 48) 62%, rgb(16, 28, 46)); }
+
+.hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; align-items: center; gap: 42px; }
+
+.eyebrow { color: var(--gold2); letter-spacing: 0.17em; text-transform: uppercase; font-weight: 800; font-size: 0.78rem; }
+
+h1 { font-family: Georgia, serif; font-size: clamp(2.5rem, 5.4vw, 4.8rem); line-height: 1.05; margin: 14px 0px 18px; }
+
+h1 span { color: var(--gold2); }
+
+.lead { font-size: 1.12rem; color: rgb(217, 223, 235); max-width: 600px; }
+
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px; }
+
+.hero-image { border: 1px solid var(--gold); border-radius: 20px; overflow: hidden; box-shadow: rgba(0, 0, 0, 0.533) 0px 20px 60px; background: rgb(11, 23, 40); }
+
+.hero-image img { display: block; width: 100%; height: auto; }
+
+section { padding: 68px 0px; }
+
+.section-head { text-align: center; max-width: 720px; margin: 0px auto 34px; }
+
+.section-head h2 { font-family: Georgia, serif; font-size: clamp(2rem, 4vw, 3rem); margin: 7px 0px 10px; }
+
+.section-head p { color: var(--muted); margin: 0px; }
+
+.services { background: rgb(9, 23, 43); }
+
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+.card { background: linear-gradient(150deg, rgb(16, 33, 59), rgb(10, 22, 40)); border: 1px solid var(--line); border-radius: 16px; padding: 23px; }
+
+.icon { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: rgba(233, 189, 99, 0.106); border: 1px solid var(--line); font-size: 1.35rem; }
+
+.card h3 { margin: 13px 0px 7px; color: var(--gold2); font-size: 1.08rem; }
+
+.card p { margin: 0px; color: var(--muted); font-size: 0.95rem; }
+
+.platforms { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+
+.platform { padding: 18px 8px; border: 1px solid var(--line); border-radius: 14px; text-align: center; background: rgb(12, 27, 49); }
+
+.platform .emoji { font-size: 1.8rem; display: block; }
+
+.platform strong { font-size: 0.86rem; display: block; margin-top: 6px; }
+
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; align-items: center; }
+
+.about-panel { border: 1px solid var(--line); border-radius: 18px; padding: 28px; background: linear-gradient(145deg, rgb(16, 33, 58), rgb(9, 20, 38)); }
+
+.about-panel h2 { font-family: Georgia, serif; font-size: 2.1rem; line-height: 1.15; margin: 8px 0px 14px; }
+
+.about-panel p { color: var(--muted); }
+
+.ticks { list-style: none; padding: 0px; margin: 18px 0px 0px; }
+
+.ticks li { margin: 10px 0px; color: rgb(244, 240, 231); }
+
+.ticks li::before { content: "✓"; display: inline-grid; place-items: center; width: 23px; height: 23px; border-radius: 50%; background: var(--gold); color: rgb(16, 23, 37); font-weight: bold; margin-right: 9px; }
+
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+
+.step { border-top: 2px solid var(--gold); padding: 18px 15px; background: rgb(12, 27, 49); border-radius: 0px 0px 14px 14px; }
+
+.step b { color: var(--gold2); display: block; margin-bottom: 6px; }
+
+.step p { font-size: 0.92rem; color: var(--muted); margin: 0px; }
+
+.contact { background: linear-gradient(130deg, rgb(16, 37, 68), rgb(7, 19, 38) 72%); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+.contact-box { max-width: 800px; margin: auto; text-align: center; border: 1px solid var(--line); border-radius: 22px; padding: 38px 22px; background: rgba(6, 16, 32, 0.66); }
+
+.contact-box h2 { font-family: Georgia, serif; font-size: clamp(2rem, 4vw, 3.2rem); margin: 7px 0px 12px; }
+
+.phone { font-size: 1.35rem; font-weight: 800; color: var(--gold2); margin: 12px 0px 22px; }
+
+footer { padding: 28px 0px; color: var(--muted); font-size: 0.85rem; }
+
+footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+.whatsapp-float { position: fixed; right: 18px; bottom: 18px; z-index: 20; width: 58px; height: 58px; border-radius: 50%; display: grid; place-items: center; background: rgb(32, 198, 106); color: rgb(255, 255, 255); text-decoration: none; font-size: 1.8rem; box-shadow: rgba(0, 0, 0, 0.533) 0px 8px 25px; border: 2px solid rgb(213, 255, 228); }
+
+@media (max-width: 800px) {
+  .hero-grid, .about-grid { grid-template-columns: 1fr; }
+  .hero { padding-top: 38px; }
+  .hero-image { max-width: 560px; margin: auto; }
+  .cards { grid-template-columns: repeat(2, 1fr); }
+  .platforms { grid-template-columns: repeat(3, 1fr); }
+  .steps { grid-template-columns: repeat(2, 1fr); }
+  nav { align-items: flex-start; padding: 15px 0px; flex-direction: column; }
+  .navlinks { gap: 13px; }
+}
+
+@media (max-width: 480px) {
+  .cards { grid-template-columns: 1fr; }
+  .hero-actions .btn { width: 100%; }
+  .platform { padding: 14px 4px; }
+  .platform strong { font-size: 0.78rem; }
+  .steps { grid-template-columns: 1fr; }
+  .topbar .wrap { font-size: 0.78rem; }
+  .contact-box { padding: 28px 16px; }
+}
+</style><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="theme-color" content="#071326">
+  <meta name="description" content="Bianca Design &amp; Marketing — professional, creative and affordable design and marketing services. Your idea. My creativity. Let's grow together.">
+  <title>Bianca Design &amp; Marketing | Let's Grow Your Business</title>
+  
+</head>
+<body>
+  <div class="topbar"><div class="wrap"><span>Professional · Creative · Affordable</span><span>WhatsApp: 073 560 1748</span></div></div>
+  <header>
+    <nav class="wrap" aria-label="Main navigation">
+      <a class="brand" href="#home">BIANCA <small>DESIGN &amp; MARKETING</small></a>
+      <div class="navlinks">
+        <a href="#services">Services</a><a href="#platforms">Platforms</a><a href="#about">About</a><a href="#contact">Contact</a>
+        <a class="btn" href="https://wa.me/27735601748?text=Hi%20Bianca%2C%20I%27d%20like%20to%20ask%20about%20your%20services.">Let's Talk ↗</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Your idea. My creativity. Real results.</div>
+          <h1>Let’s <span>grow</span><br>your business.</h1>
+          <p class="lead">Your business deserves to stand out. We help turn your ideas into eye-catching designs and professional marketing that helps your brand get noticed.</p>
+          <div class="hero-actions">
+            <a class="btn" href="https://wa.me/27735601748?text=Hi%20Bianca%2C%20I%27m%20interested%20in%20your%20design%20and%20marketing%20services.">💬 Get a Quote on WhatsApp</a>
+            <a class="btn outline" href="#services">Explore Services ↓</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="images/bianca-promo.jpg" alt="Bianca Design &amp; Marketing promotional poster showing branding, design and marketing services">
+        </div>
+      </div>
+    </section>
+    <section class="services" id="services">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">What I can do for you</div><h2>Creative services for growing brands</h2><p>From your first logo to your next big campaign, get professional visuals designed to help your business make a strong impression.</p></div>
+        <div class="cards">
+          <article class="card"><div class="icon">🎨</div><h3>Posters &amp; Flyers</h3><p>Promotional designs for launches, specials, events and everyday business advertising.</p></article>
+          <article class="card"><div class="icon">📱</div><h3>Social Media Marketing</h3><p>Creative content and marketing support across six major social platforms.</p></article>
+          <article class="card"><div class="icon">🎬</div><h3>Advert Videos</h3><p>Attention-grabbing promotional videos to introduce your products and services.</p></article>
+          <article class="card"><div class="icon">💎</div><h3>Logo &amp; Business Cards</h3><p>Build a consistent, professional brand identity customers can recognise.</p></article>
+          <article class="card"><div class="icon">🛍️</div><h3>Product Photos &amp; Adverts</h3><p>Polished product visuals and adverts that put your offering in the spotlight.</p></article>
+          <article class="card"><div class="icon">🏷️</div><h3>Stickers, Labels &amp; Custom Designs</h3><p>Custom graphics, stickers, labels, menus, price lists and more.</p></article>
+          <article class="card"><div class="icon">📄</div><h3>Menus &amp; Price Lists</h3><p>Clear, attractive layouts that make your products and prices easy to browse.</p></article>
+          <article class="card"><div class="icon">🚀</div><h3>Social Page Creation</h3><p>Get help establishing a professional presence for your business online.</p></article>
+          <article class="card"><div class="icon">✨</div><h3>Custom Design Requests</h3><p>Have a different idea? Tell me what you need and let’s create something for your brand.</p></article>
+        </div>
+      </div>
+    </section>
+    <section id="platforms">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">Reach your audience</div><h2>Marketing on 6 platforms</h2><p>Build a recognisable brand and connect with customers where they spend their time.</p></div>
+        <div class="platforms">
+          <div class="platform"><span class="emoji">🎵</span><strong>TikTok</strong></div>
+          <div class="platform"><span class="emoji">📸</span><strong>Instagram</strong></div>
+          <div class="platform"><span class="emoji">ⓕ</span><strong>Facebook</strong></div>
+          <div class="platform"><span class="emoji">▶️</span><strong>YouTube</strong></div>
+          <div class="platform"><span class="emoji">💬</span><strong>WhatsApp</strong></div>
+          <div class="platform"><span class="emoji">in</span><strong>LinkedIn</strong></div>
+        </div>
+      </div>
+    </section>
+    <section id="about" class="services">
+      <div class="wrap about-grid">
+        <div class="about-panel">
+          <div class="eyebrow">Your vision matters</div>
+          <h2>Design that brings your ideas to life.</h2>
+          <p>Whether you’re starting a new business or growing an existing one, Bianca Design &amp; Marketing is here to help you present your brand with confidence.</p>
+          <ul class="ticks"><li>Creative, brand-focused designs</li><li>Professional and polished presentation</li><li>Print-ready design files where applicable</li><li>Marketing support for growing businesses</li></ul>
+        </div>
+        <div>
+          <div class="eyebrow">Simple and collaborative</div><h2 style="font-family:Georgia,serif;font-size:2.4rem;line-height:1.15">From idea to impact.</h2>
+          <p style="color:var(--muted)">Your business is unique. The design should be too. Share your vision, your audience and what you want to achieve, and we can discuss the best creative direction for your project.</p>
+          <div class="steps">
+            <div class="step"><b>01 · Tell me</b><p>Share your idea and what you need.</p></div>
+            <div class="step"><b>02 · Plan</b><p>Discuss the design, details and budget.</p></div>
+            <div class="step"><b>03 · Create</b><p>Your design is developed around your brief.</p></div>
+            <div class="step"><b>04 · Grow</b><p>Use your creative materials to promote your brand.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="contact" id="contact">
+      <div class="wrap"><div class="contact-box">
+        <div class="eyebrow">Let’s make something great</div>
+        <h2>Ready to take your business to the next level?</h2>
+        <p style="color:var(--muted)">Message Bianca today to discuss your design or marketing project. Tell me about your business and what you would like to create.</p>
+        <div class="phone">☎ 073 560 1748</div>
+        <a class="btn" href="https://wa.me/27735601748?text=Hi%20Bianca%2C%20I%27d%20like%20to%20discuss%20a%20design%20or%20marketing%20project.">Message Bianca on WhatsApp ↗</a>
+        <p style="font-size:.86rem;color:var(--muted);margin-top:18px">Your idea. My creativity. Let’s grow together! ♡</p>
+      </div></div>
+    </section>
+  </main>
+  <footer><div class="wrap"><span>© <span id="year">2026</span> Bianca Design &amp; Marketing</span><span>Professional · Creative · Affordable</span></div></footer>
+  <a class="whatsapp-float" aria-label="Chat to Bianca on WhatsApp" href="https://wa.me/27735601748?text=Hi%20Bianca%2C%20I%27d%20like%20to%20ask%20about%20your%20services.">☏</a>
+  
+
+</body></html>
